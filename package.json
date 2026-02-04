@@ -1,0 +1,21 @@
+{
+  "name": "victoria_beautiful",
+  "version": "1.0.0",
+  "description": "Proyecto empresarial desarrollado con HTML, CSS y JavaScript. Incluye uso de framework para el frontend, backend con Node.js, gestión de código en GitHub y conexión a base de datos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesus130305/Victoria_Beautiful.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jesus130305/Victoria_Beautiful/issues"
+  },
+  "homepage": "https://github.com/jesus130305/Victoria_Beautiful#readme"
+}
