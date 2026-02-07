@@ -339,6 +339,367 @@
                 </div>
             </div>
         </section>
+
+        <!-- NUEVA SECCIÓN: Catálogo de Productos (Inicialmente oculta) -->
+        <section id="catalog-screen" class="vb-hidden">
+            <div class="container">
+                <nav class="vb-breadcrumb">
+                    <a href="#" class="vb-back-home">Inicio</a>
+                    <span class="vb-separator">/</span>
+                    <span>Catálogo de Productos</span>
+                </nav>
+
+                <header class="vb-catalog-header">
+                    <h1>Nuestra Colección</h1>
+                    <p>Ramos hechos a mano y regalos únicos para cada momento especial.</p>
+                </header>
+
+                <div class="vb-catalog-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="vb-sidebar">
+                        <div class="vb-filter-group">
+                            <div class="vb-filter-title">
+                                <span>Filtros</span>
+                                <span class="vb-clear-btn">Limpiar todo</span>
+                            </div>
+                            <div class="vb-category-badge">
+                                <ion-icon name="pricetag"></ion-icon>
+                                <span>Categorías</span>
+                            </div>
+                            <label class="vb-filter-item">
+                                <input type="checkbox" checked>
+                                <span>Ramos de Chocolate</span>
+                            </label>
+                            <label class="vb-filter-item">
+                                <input type="checkbox">
+                                <span>Sets de Maquillaje</span>
+                            </label>
+                            <label class="vb-filter-item">
+                                <input type="checkbox">
+                                <span>Ramos Frescos</span>
+                            </label>
+                        </div>
+
+                        <div class="vb-filter-group">
+                            <div class="vb-filter-title">
+                                <ion-icon name="cash-outline"></ion-icon>
+                                <span>Rango de Precio</span>
+                            </div>
+                            <div class="vb-price-range">
+                                <input type="range" class="vb-range-input" min="20" max="200" value="100">
+                                <div class="vb-range-labels">
+                                    <span>S/20</span>
+                                    <span>S/200+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Catalog Content -->
+                    <div class="vb-main-content">
+                        <div class="vb-category-tabs">
+                            <button class="vb-tab active">Chocolate</button>
+                            <button class="vb-tab">Maquillaje</button>
+                            <button class="vb-tab">Ramos</button>
+                            <button class="vb-tab vb-new-pill">Nuevos <ion-icon name="star"></ion-icon></button>
+                        </div>
+
+                        <div class="vb-product-grid">
+                            <!-- Producto 1 -->
+                            <article class="vb-card" data-category="chocolate">
+                                <span class="vb-badge vb-badge-best">Bestseller</span>
+                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
+                                <div class="vb-card-img">
+                                    <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?q=80&w=800"
+                                        alt="Ferrero Garden">
+                                </div>
+                                <div class="vb-card-body">
+                                    <span class="vb-card-tag">Chocolate</span>
+                                    <h3>Golden Ferrero Garden</h3>
+                                    <p class="vb-card-price">S/45.00</p>
+                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
+                                </div>
+                            </article>
+                            <!-- Producto 2 -->
+                            <article class="vb-card" data-category="makeup">
+                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
+                                <div class="vb-card-img">
+                                    <img src="assets/box-desayuno.jpg" alt="Blush Romance">
+                                </div>
+                                <div class="vb-card-body">
+                                    <span class="vb-card-tag">Maquillaje</span>
+                                    <h3>Blush Romance Set</h3>
+                                    <p class="vb-card-price">S/89.99</p>
+                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
+                                </div>
+                            </article>
+                            <!-- Producto 3 -->
+                            <article class="vb-card" data-category="ramos">
+                                <span class="vb-badge vb-badge-fresh">Fresco Hoy</span>
+                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
+                                <div class="vb-card-img">
+                                    <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=800"
+                                        alt="Infinite Love">
+                                </div>
+                                <div class="vb-card-body">
+                                    <span class="vb-card-tag">Ramos</span>
+                                    <h3>Infinite Love Box</h3>
+                                    <p class="vb-card-price">S/65.00</p>
+                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="vb-pagination">
+                            <button class="vb-page-arrow"><ion-icon name="chevron-back"></ion-icon></button>
+                            <button class="vb-page-num active">1</button>
+                            <button class="vb-page-num">2</button>
+                            <button class="vb-page-arrow"><ion-icon name="chevron-forward"></ion-icon></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Vista de Detalles del Producto (Inicialmente oculta) -->
+        <section id="product-details" class="vb-hidden">
+            <div class="container">
+                <nav class="vd-breadcrumb">
+                    <a href="#" class="vd-back-to-catalog">Catálogo</a>
+                    <span class="vd-separator">/</span>
+                    <span id="vd-breadcrumb-name">Nombre del Producto</span>
+                </nav>
+
+                <div class="vd-details-layout">
+                    <!-- Gallery -->
+                    <div class="vd-gallery">
+                        <div class="vd-main-img">
+                            <img id="vd-product-img" src="" alt="Producto">
+                        </div>
+                        <div class="vd-thumbnails">
+                            <div class="vd-thumb active"><img src="" alt="Vista 1" class="vd-thumb-img-1"></div>
+                            <div class="vd-thumb"><img src="" alt="Vista 2" class="vd-thumb-img-2"></div>
+                            <div class="vd-thumb"><img src="" alt="Vista 3" class="vd-thumb-img-3"></div>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="vd-info">
+                        <span class="vd-badge-label">MÁS VENDIDO</span>
+                        <h1 id="vd-product-name">Nombre del Producto</h1>
+                        <p class="vd-short-desc">Una lujosa mezcla de rosas de color rojo intenso de primera calidad y
+                            eucalipto con toques dorados.</p>
+
+                        <div class="vd-price-stars">
+                            <div class="vd-price-box">
+                                <span class="vd-label">PRECIO</span>
+                                <span id="vd-product-price" class="vd-price">S/0.00</span>
+                            </div>
+                            <div class="vd-stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                                <span class="vd-reviews">(48 Reseñas)</span>
+                            </div>
+                        </div>
+
+                        <div class="vd-options">
+                            <h4>Seleccionar Tamaño</h4>
+                            <div class="vd-size-grid">
+                                <button class="vd-size-btn active">
+                                    <strong>Estándar</strong>
+                                    <span>(12 tallos)</span>
+                                </button>
+                                <button class="vd-size-btn">
+                                    <strong>Grande</strong>
+                                    <span>(24 tallos)</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="vd-message">
+                            <h4>Mensaje para la Tarjeta</h4>
+                            <textarea placeholder="Escribe tu mensaje personal aquí..."></textarea>
+                        </div>
+
+                        <div class="vd-actions">
+                            <button class="vd-btn-cart"><ion-icon name="cart"></ion-icon> Añadir al Carrito</button>
+                            <button class="vd-btn-now">Comprar Ahora</button>
+                        </div>
+
+                        <div class="vd-accordion">
+                            <div class="vd-acc-item open">
+                                <div class="vd-acc-header">
+                                    <span>Descripción del Producto</span>
+                                    <ion-icon name="chevron-up-outline"></ion-icon>
+                                </div>
+                                <div class="vd-acc-content">
+                                    <p>Seleccionadas a mano por su color intenso y textura aterciopelada, nuestras Rosas
+                                        Royal Velvet son el pináculo del lujo. Combinadas con eucalipto aromático
+                                        pintado con delicados toques dorados, este arreglo se entrega en nuestra caja
+                                        exclusiva premium.</p>
+                                </div>
+                            </div>
+                            <div class="vd-acc-item">
+                                <div class="vd-acc-header">
+                                    <span>Información de Entrega</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related -->
+                <div class="vd-related">
+                    <h2>También te podría gustar</h2>
+                    <p>Regalos seleccionados especialmente para complementar tu elección.</p>
+                    <div class="vd-related-grid">
+                        <div class="vd-related-card">
+                            <img src="assets/box-piqueo-cumpleanero.png" alt="Regalo">
+                            <h3>Set de Regalo Celebración</h3>
+                            <span class="vd-related-price">S/85.00</span>
+                        </div>
+                        <div class="vd-related-card">
+                            <img src="assets/ramo-skincare-1.png" alt="Regalo">
+                            <h3>Vela de Jazmín Medianoche</h3>
+                            <span class="vd-related-price">S/32.00</span>
+                        </div>
+                        <div class="vd-related-card">
+                            <img src="assets/ramo-maquillaje-2.png" alt="Regalo">
+                            <h3>Mini Orquídea Blanca</h3>
+                            <span class="vd-related-price">S/45.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA SECCIÓN: Contacto y Pedidos Personalizados (Fase 3) -->
+        <section id="contact-screen" class="vb-hidden">
+            <div class="container">
+                <header class="vc-header">
+                    <h1>Contacto y Pedidos Personalizados</h1>
+                    <p>Nos encantaría saber de ti. Ya sea que estés interesado en un arreglo a medida o tengas una
+                        pregunta específica sobre nuestra colección, cuéntanos sobre el regalo de tus sueños.</p>
+                </header>
+
+                <div class="vc-layout">
+                    <!-- Form Section -->
+                    <div class="vc-card vc-form-card">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form id="vc-contact-form">
+                            <div class="vc-field">
+                                <label for="vc-name">Nombre Completo</label>
+                                <input type="text" id="vc-name" placeholder="Ingresa tu nombre" required>
+                            </div>
+                            <div class="vc-field">
+                                <label for="vc-email">Correo Electrónico</label>
+                                <input type="email" id="vc-email" placeholder="ejemplo@email.com" required>
+                            </div>
+                            <div class="vc-field">
+                                <label for="vc-type">Tipo de Pedido</label>
+                                <select id="vc-type">
+                                    <option value="general">Consulta General</option>
+                                    <option value="custom">Ramo Personalizado</option>
+                                    <option value="event">Decoración para Eventos</option>
+                                </select>
+                            </div>
+                            <div class="vc-field">
+                                <label for="vc-message">Mensaje</label>
+                                <textarea id="vc-message" placeholder="Cuéntanos qué es lo que estás buscando..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="vc-submit-btn">Enviar Solicitud</button>
+                        </form>
+                        <div id="vc-form-feedback" class="vc-feedback vb-hidden">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                            <span>¡Mensaje enviado con éxito! Nos contactaremos pronto.</span>
+                        </div>
+                    </div>
+
+                    <!-- Info Section -->
+                    <div class="vc-info-column">
+                        <div class="vc-card vc-info-card">
+                            <h2>Ponte en Contacto</h2>
+                            <div class="vc-info-item">
+                                <div class="vc-info-icon"><ion-icon name="location-outline"></ion-icon></div>
+                                <div class="vc-info-text">
+                                    <strong>Nuestra Boutique</strong>
+                                    <span>123 Victoria Gardens Lane, Londres, SW1E 5RS</span>
+                                </div>
+                            </div>
+                            <div class="vc-info-item">
+                                <div class="vc-info-icon"><ion-icon name="mail-outline"></ion-icon></div>
+                                <div class="vc-info-text">
+                                    <strong>Escríbenos</strong>
+                                    <span>hello@victoriabeautiful.com</span>
+                                    <span>custom@victoriabeautiful.com</span>
+                                </div>
+                            </div>
+                            <div class="vc-info-item">
+                                <div class="vc-info-icon"><ion-icon name="call-outline"></ion-icon></div>
+                                <div class="vc-info-text">
+                                    <strong>Llámanos</strong>
+                                    <span>+44 20 7946 0123</span>
+                                    <span>Lun-Vie, 9am - 6pm</span>
+                                </div>
+                            </div>
+                            <div class="vc-social-links">
+                                <h3>Sigue Nuestro Viaje</h3>
+                                <div class="vc-social-grid">
+                                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                                    <a href="#"><ion-icon name="logo-pinterest"></ion-icon></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Mockup -->
+                        <div class="vc-card vc-map-card">
+                            <div class="vc-map-content">
+                                <div class="vc-map-placeholder">
+                                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800"
+                                        alt="Mapa">
+                                    <div class="vc-map-tag">
+                                        <strong>VICTORIA BEAUTIFUL BOUTIQUE</strong>
+                                        <span>Centro de Londres, SW1E 5RS</span>
+                                    </div>
+                                    <div class="vc-map-pin"><ion-icon name="location"></ion-icon></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Features Mock -->
+                <div class="vc-footer-features">
+                    <div class="vc-feature">
+                        <ion-icon name="ribbon-outline"></ion-icon>
+                        <h4>Elaboración Experta</h4>
+                        <span>Materiales de alta calidad</span>
+                    </div>
+                    <div class="vc-feature">
+                        <ion-icon name="bus-outline"></ion-icon>
+                        <h4>Entrega Rápida</h4>
+                        <span>Local e internacional</span>
+                    </div>
+                    <div class="vc-feature">
+                        <ion-icon name="leaf-outline"></ion-icon>
+                        <h4>Ecológico</h4>
+                        <span>Embalaje sostenible</span>
+                    </div>
+                    <div class="vc-feature">
+                        <ion-icon name="color-wand-outline"></ion-icon>
+                        <h4>Diseños Personalizados</h4>
+                        <span>Únicos para tus necesidades</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
