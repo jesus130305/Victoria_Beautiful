@@ -56,73 +56,343 @@ a {
 }
 
 /* Header */
+/* Header Redesign (Aruma Style) */
 .header {
-    padding: 20px 0;
     background: var(--bg-white);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 0;
 }
 
-.header-container {
+.header-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 12px 0;
+    gap: 15px;
+    /* Reduced gap to give more room to the search bar */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 40px;
-    /* Separar el logo del menú de navegación */
+    flex-shrink: 0;
 }
 
 .logo-img {
     height: 60px;
     width: auto;
-    display: block;
-    margin-right: 25px;
-    /* Spacing between logo and text */
+    margin-right: 0px;
+    /* Removed margin to save horizontal space */
 }
 
 .logo-brand {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #ff0080;
-    /* Magenta/Pink from reference */
     white-space: nowrap;
-    letter-spacing: 0.5px;
 }
 
-.nav ul {
+.search-bar {
+    flex-grow: 1;
+    max-width: 1000px;
+    /* Increased from 800px to avoid text cutoff */
     display: flex;
-    gap: 30px;
+    align-items: center;
+    background: #f7f7f7;
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s;
 }
 
-.nav a {
-    font-size: 0.9rem;
+.search-bar:focus-within {
+    background: #fff;
+    border-color: #ff0080;
+    box-shadow: 0 0 0 3px rgba(255, 0, 128, 0.1);
+}
+
+.search-bar ion-icon {
+    font-size: 1.3rem;
+    color: #888;
+    margin-right: 12px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.search-bar input::placeholder {
+    color: #333;
+    /* Much darker for better visibility */
     font-weight: 500;
-}
-
-.nav a:hover {
-    color: var(--primary-color);
+    /* Slightly bolder */
 }
 
 .header-actions {
     display: flex;
     align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.action-item ion-icon {
+    font-size: 1.5rem;
+}
+
+.action-item span,
+.action-item strong {
+    font-size: 0.7rem;
+    display: block;
+    line-height: 1.2;
+}
+
+.action-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header-bottom {
+    background: #fff;
+    border-top: 1px solid #f0f0f0;
+    padding: 10px 0;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #333;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    color: #ff0080;
+}
+
+/* Mega Menu / Dropdown Styles */
+.dropdown-item {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-white);
+    min-width: 260px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    border-radius: var(--radius-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.dropdown-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.mega-menu li {
+    width: 100%;
+}
+
+.mega-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-weight: 400;
+    border-bottom: 1px solid #f5f5f5;
+    white-space: normal;
+    /* Allow text to wrap if needed in dropdown */
+}
+
+.mega-menu li:last-child a {
+    border-bottom: none;
+}
+
+.mega-menu a:hover {
+    background-color: var(--pink-light);
+    color: var(--primary-color);
+    padding-left: 25px;
+    /* Slight movement effect */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 15px;
+    margin-bottom: 0px;
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 992px) {
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav {
+        display: block;
+        /* Required for slide toggle logic, usually hidden via height or translation */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0;
+        margin: 0;
+        z-index: 999;
+    }
+
+    .nav.active {
+        max-height: 100vh;
+        /* Allow enough height for expansion */
+        padding: 20px 0;
+        overflow-y: auto;
+        /* Scroll if too long */
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav li {
+        width: 100%;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .nav a {
+        display: block;
+        padding: 15px 20px;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    /* Mega Menu Mobile - Accordion Style */
+    .mega-menu {
+        position: static;
+        /* Stack flow */
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        /* Hidden by default */
+        background-color: #f9f9f9;
+    }
+
+    .mega-menu.active {
+        display: block;
+    }
+
+    .mega-menu a {
+        padding-left: 40px;
+        /* Indent sub-items */
+        font-size: 0.9rem;
+        color: var(--text-muted);
+    }
+
+    /* Disable hover effect on mobile */
+    .dropdown-item:hover .mega-menu {
+        display: none;
+        /* Controlled by JS click */
+    }
+
+    /* Allow click to show */
+    .dropdown-item.active .mega-menu {
+        display: block;
+    }
 }
 
 .search-bar {
     display: flex;
     align-items: center;
     background: #f1f1f1;
-    padding: 8px 15px;
+    padding: 6px 12px;
     border-radius: 20px;
-    gap: 10px;
+    gap: 8px;
 }
 
 .search-bar ion-icon {
@@ -134,7 +404,7 @@ a {
     background: transparent;
     outline: none;
     font-size: 0.85rem;
-    width: 150px;
+    width: 120px;
 }
 
 .action-btn {
@@ -529,13 +799,19 @@ a {
     display: none !important;
 }
 
+/* Hide all card labels and badges as user requested 'no imagens ni letra' (minimalism) */
+.vb-card-tag,
+.vb-badge,
+.vb-wishlist-btn {
+    display: none !important;
+}
+
+#catalog-screen {
+    padding-top: 0 !important;
+}
+
 .vb-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 20px 0;
+    display: none;
 }
 
 .vb-back-home {
@@ -549,26 +825,24 @@ a {
 }
 
 .vb-catalog-header {
-    text-align: center;
-    margin-bottom: 50px;
+    display: none;
 }
 
-.vb-catalog-header h1 {
-    font-family: var(--font-heading);
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+#catalog-screen .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 40px;
 }
 
 .vb-catalog-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 40px;
+    display: block;
+    width: 100%;
     margin-bottom: 80px;
 }
 
-/* Sidebar */
+/* Sidebar - Removed */
 .vb-sidebar {
-    background: var(--bg-white);
+    display: none;
 }
 
 .vb-filter-group {
@@ -676,8 +950,8 @@ a {
 /* Catalog Grid */
 .vb-product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
     margin-bottom: 50px;
 }
 
@@ -838,11 +1112,7 @@ a {
 /* Responsividad Catálogo */
 @media (max-width: 900px) {
     .vb-catalog-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .vb-sidebar {
-        display: none;
+        display: block;
     }
 }
 

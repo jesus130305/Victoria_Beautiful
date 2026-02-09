@@ -19,25 +19,134 @@
 
 <body>
     <header class="header">
-        <div class="container header-container">
+        <div class="header-top container">
             <div class="logo">
                 <img src="assets/logo.png" alt="Victoria Beautiful Logo" class="logo-img">
             </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#maquillaje">Maquillaje</a></li>
-                    <li><a href="#skincare">Skincare</a></li>
-                    <li><a href="#boxes">Boxes & Detalles</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                </ul>
-            </nav>
+
+            <div class="search-bar">
+                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" placeholder="¿Qué estás buscando hoy?">
+            </div>
+
             <div class="header-actions">
-                <div class="search-bar">
-                    <ion-icon name="search-outline"></ion-icon>
-                    <input type="text" placeholder="Buscar flores...">
+                <div class="action-item">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <div class="action-text">
+                        <span>Hola,</span>
+                        <strong>Inicia sesión</strong>
+                    </div>
                 </div>
-                <button class="action-btn"><ion-icon name="heart-outline"></ion-icon></button>
-                <button class="action-btn"><ion-icon name="bag-handle"></ion-icon></button>
+                <div class="action-item">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span>Favoritos</span>
+                </div>
+                <div class="action-item cart-item">
+                    <div class="cart-icon-wrapper">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                    </div>
+                    <span>Carrito</span>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="nav">
+                    <ul>
+                        <li class="dropdown-item">
+                            <a href="#boxes">Box Personalizados</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Box Desayunos</a></li>
+                                    <li><a href="#">Box Antojitos al Paso</a></li>
+                                    <li><a href="#">Box Dulces</a></li>
+                                    <li><a href="#">Box Dulces con Fotos</a></li>
+                                    <li><a href="#">Box Personalizados con Personajes</a></li>
+                                    <li><a href="#">Box Mini Donas Personalizadas</a></li>
+                                    <li><a href="#">Box Fresas Personalizadas</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#">Ramos Personalizados</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Ramos de Maquillaje</a></li>
+                                    <li><a href="#">Ramos de Skincare</a></li>
+                                    <li><a href="#">Ramos de Fotos y Dulces</a></li>
+                                    <li><a href="#">Ramos de Rosas Eternas y Dulces</a></li>
+                                    <li><a href="#">Ramos Hot Wheels</a></li>
+                                    <li><a href="#">Ramos con Peluches y Dulces</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#">Accesorios de Belleza</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Espejos para cartera</a></li>
+                                    <li><a href="#">Espejos LED para tocador</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#skincare">Skincare y Tratamientos Faciales</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Crema de manos</a></li>
+                                    <li><a href="#">Exfoliantes</a></li>
+                                    <li><a href="#">Limpiador facial</a></li>
+                                    <li><a href="#">Jabón facial</a></li>
+                                    <li><a href="#">Vincha skincare</a></li>
+                                    <li><a href="#">Mascarilla para puntos negros</a></li>
+                                    <li><a href="#">Mascarilla para ojeras</a></li>
+                                    <li><a href="#">Mascarilla para labios</a></li>
+                                    <li><a href="#">Mascarilla facial</a></li>
+                                    <li><a href="#">Exfoliador de silicona</a></li>
+                                    <li><a href="#">Pack de masajeadores faciales</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#">Perfumes y Fragancias</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Mini perfumes</a></li>
+                                    <li><a href="#">Colonias refrescantes</a></li>
+                                    <li><a href="#">Colonias shimmer</a></li>
+                                    <li><a href="#">Pack de colonias con crema</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#maquillaje">Maquillaje</a>
+                            <div class="mega-menu">
+                                <ul>
+                                    <li><a href="#">Labiales líquidos</a></li>
+                                    <li><a href="#">Labiales en barra</a></li>
+                                    <li><a href="#">Lip gloss / brillo gloss</a></li>
+                                    <li><a href="#">Bálsamo labial</a></li>
+                                    <li><a href="#">Labiales tinta</a></li>
+                                    <li><a href="#">Rubores</a></li>
+                                    <li><a href="#">Sombras para ojos</a></li>
+                                    <li><a href="#">Sombras para cejas</a></li>
+                                    <li><a href="#">Delineador de ojos</a></li>
+                                    <li><a href="#">Iluminadores</a></li>
+                                    <li><a href="#">Polvo de hadas</a></li>
+                                    <li><a href="#">Polvo compacto</a></li>
+                                    <li><a href="#">Correctores</a></li>
+                                    <li><a href="#">Esmaltes</a></li>
+                                    <li><a href="#">Rizadores de pestañas</a></li>
+                                    <li><a href="#">Brochas</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
@@ -340,127 +449,6 @@
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: Catálogo de Productos (Inicialmente oculta) -->
-        <section id="catalog-screen" class="vb-hidden">
-            <div class="container">
-                <nav class="vb-breadcrumb">
-                    <a href="#" class="vb-back-home">Inicio</a>
-                    <span class="vb-separator">/</span>
-                    <span>Catálogo de Productos</span>
-                </nav>
-
-                <header class="vb-catalog-header">
-                    <h1>Nuestra Colección</h1>
-                    <p>Ramos hechos a mano y regalos únicos para cada momento especial.</p>
-                </header>
-
-                <div class="vb-catalog-layout">
-                    <!-- Sidebar Filters -->
-                    <aside class="vb-sidebar">
-                        <div class="vb-filter-group">
-                            <div class="vb-filter-title">
-                                <span>Filtros</span>
-                                <span class="vb-clear-btn">Limpiar todo</span>
-                            </div>
-                            <div class="vb-category-badge">
-                                <ion-icon name="pricetag"></ion-icon>
-                                <span>Categorías</span>
-                            </div>
-                            <label class="vb-filter-item">
-                                <input type="checkbox" checked>
-                                <span>Ramos de Chocolate</span>
-                            </label>
-                            <label class="vb-filter-item">
-                                <input type="checkbox">
-                                <span>Sets de Maquillaje</span>
-                            </label>
-                            <label class="vb-filter-item">
-                                <input type="checkbox">
-                                <span>Ramos Frescos</span>
-                            </label>
-                        </div>
-
-                        <div class="vb-filter-group">
-                            <div class="vb-filter-title">
-                                <ion-icon name="cash-outline"></ion-icon>
-                                <span>Rango de Precio</span>
-                            </div>
-                            <div class="vb-price-range">
-                                <input type="range" class="vb-range-input" min="20" max="200" value="100">
-                                <div class="vb-range-labels">
-                                    <span>S/20</span>
-                                    <span>S/200+</span>
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <!-- Main Catalog Content -->
-                    <div class="vb-main-content">
-                        <div class="vb-category-tabs">
-                            <button class="vb-tab active">Chocolate</button>
-                            <button class="vb-tab">Maquillaje</button>
-                            <button class="vb-tab">Ramos</button>
-                            <button class="vb-tab vb-new-pill">Nuevos <ion-icon name="star"></ion-icon></button>
-                        </div>
-
-                        <div class="vb-product-grid">
-                            <!-- Producto 1 -->
-                            <article class="vb-card" data-category="chocolate">
-                                <span class="vb-badge vb-badge-best">Bestseller</span>
-                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
-                                <div class="vb-card-img">
-                                    <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?q=80&w=800"
-                                        alt="Ferrero Garden">
-                                </div>
-                                <div class="vb-card-body">
-                                    <span class="vb-card-tag">Chocolate</span>
-                                    <h3>Golden Ferrero Garden</h3>
-                                    <p class="vb-card-price">S/45.00</p>
-                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
-                                </div>
-                            </article>
-                            <!-- Producto 2 -->
-                            <article class="vb-card" data-category="makeup">
-                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
-                                <div class="vb-card-img">
-                                    <img src="assets/box-desayuno.jpg" alt="Blush Romance">
-                                </div>
-                                <div class="vb-card-body">
-                                    <span class="vb-card-tag">Maquillaje</span>
-                                    <h3>Blush Romance Set</h3>
-                                    <p class="vb-card-price">S/89.99</p>
-                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
-                                </div>
-                            </article>
-                            <!-- Producto 3 -->
-                            <article class="vb-card" data-category="ramos">
-                                <span class="vb-badge vb-badge-fresh">Fresco Hoy</span>
-                                <button class="vb-wishlist-btn"><ion-icon name="heart-outline"></ion-icon></button>
-                                <div class="vb-card-img">
-                                    <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=800"
-                                        alt="Infinite Love">
-                                </div>
-                                <div class="vb-card-body">
-                                    <span class="vb-card-tag">Ramos</span>
-                                    <h3>Infinite Love Box</h3>
-                                    <p class="vb-card-price">S/65.00</p>
-                                    <button class="vb-add-btn"><ion-icon name="cart-outline"></ion-icon> Añadir</button>
-                                </div>
-                            </article>
-                        </div>
-
-                        <!-- Pagination -->
-                        <div class="vb-pagination">
-                            <button class="vb-page-arrow"><ion-icon name="chevron-back"></ion-icon></button>
-                            <button class="vb-page-num active">1</button>
-                            <button class="vb-page-num">2</button>
-                            <button class="vb-page-arrow"><ion-icon name="chevron-forward"></ion-icon></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- NUEVA SECCIÓN: Vista de Detalles del Producto (Inicialmente oculta) -->
         <section id="product-details" class="vb-hidden">
