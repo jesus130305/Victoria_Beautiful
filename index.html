@@ -14,7 +14,9 @@
     <!-- Ionicons for icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style-responsive.css?v=2.0">
+
 </head>
 
 <body>
@@ -58,7 +60,7 @@
                 <nav class="nav">
                     <ul>
                         <li class="dropdown-item">
-                            <a href="#boxes">Box Personalizados</a>
+                            <a href="javascript:void(0)" data-target="product-catalog">Box Personalizados</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Box Desayunos</a></li>
@@ -72,7 +74,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#">Ramos Personalizados</a>
+                            <a href="javascript:void(0)" data-target="ramos-catalog">Ramos Personalizados</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Ramos de Maquillaje</a></li>
@@ -85,7 +87,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#">Accesorios de Belleza</a>
+                            <a href="javascript:void(0)" data-target="accesorios-catalog">Accesorios de Belleza</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Espejos para cartera</a></li>
@@ -158,13 +160,138 @@
                     <h1>Sencillamente Hermosa, Naturalmente Tú</h1>
                     <p>Encuentra el detalle perfecto que resalta tu belleza. Ramos premium, skincare de lujo
                         y boxes personalizados diseñados para emocionar.</p>
-                    <a href="#maquillaje" class="btn btn-primary">Ver Colección</a>
+                    <a href="#" class="btn btn-primary"
+                        onclick="event.preventDefault(); switchCatalog('product-catalog');">Ver Catálogo</a>
                 </div>
             </div>
         </section>
 
-        <!-- Category: Ramos de Maquillaje -->
-        <section id="maquillaje" class="collection-section container">
+
+        <!-- Catalog Section (Boxes) -->
+        <section id="product-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Box Personalizados</h2>
+                <p>Encuentra el detalle perfecto dividido por categorías.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn active" data-categoria="desayunos">
+                            <ion-icon name="cafe-outline"></ion-icon> Box Desayunos
+                        </button>
+                        <button class="cat-btn" data-categoria="antojitos">
+                            <ion-icon name="pizza-outline"></ion-icon> Box Antojitos al Paso
+                        </button>
+                        <button class="cat-btn" data-categoria="dulces">
+                            <ion-icon name="ice-cream-outline"></ion-icon> Box Dulces
+                        </button>
+                        <button class="cat-btn" data-categoria="dulces-fotos">
+                            <ion-icon name="camera-outline"></ion-icon> Box Dulces con Fotos
+                        </button>
+                        <button class="cat-btn" data-categoria="personajes">
+                            <ion-icon name="happy-outline"></ion-icon> Box Personalizados con Personajes
+                        </button>
+                        <button class="cat-btn" data-categoria="donas">
+                            <ion-icon name="color-palette-outline"></ion-icon> Box Mini Donas Personalizadas
+                        </button>
+                        <button class="cat-btn" data-categoria="fresas">
+                            <ion-icon name="leaf-outline"></ion-icon> Box Fresas Personalizadas
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="catalog-grid" class="product-grid">
+                        <!-- Dynamic products will be loaded here -->
+                    </div>
+                    <div id="no-products-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ramos Catalog Section -->
+        <section id="ramos-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Ramos Personalizados</h2>
+                <p>Elige el estilo que más te guste y personalízalo a tu manera.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Estilos de Ramos</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-ramos active" data-categoria="ramos-maquillaje">
+                            <ion-icon name="color-palette-outline"></ion-icon> Ramos de Maquillaje
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-skincare">
+                            <ion-icon name="sparkles-outline"></ion-icon> Ramos de Skincare
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-dulces">
+                            <ion-icon name="restaurant-outline"></ion-icon> Ramos de Fotos y Dulces
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-eternos">
+                            <ion-icon name="flower-outline"></ion-icon> Ramos Rosas Eternas y Dulces
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-hotwheels">
+                            <ion-icon name="car-sport-outline"></ion-icon> Ramos Hot Wheels
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-peluches">
+                            <ion-icon name="heart-half-outline"></ion-icon> Ramos con Peluches y Dulces
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="ramos-grid" class="product-grid">
+                        <!-- Dynamic ramos will be loaded here -->
+                    </div>
+                    <div id="no-ramos-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay ramos disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accesorios Catalog Section -->
+        <section id="accesorios-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Accesorios de Belleza</h2>
+                <p>Complementos esenciales para resaltar tu estilo diario.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-accesorios active" data-categoria="espejos-cartera">
+                            <ion-icon name="sparkles-outline"></ion-icon> Espejos para Cartera
+                        </button>
+                        <button class="cat-btn-accesorios" data-categoria="espejos-led">
+                            <ion-icon name="bulb-outline"></ion-icon> Espejos LED para Tocador
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="accesorios-grid" class="product-grid">
+                        <!-- Dynamic accesorios will be loaded here -->
+                    </div>
+                    <div id="no-accesorios-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Ramos de Maquillaje (Hidden to prioritize catalog) -->
+        <section id="maquillaje" class="collection-section container vb-hidden">
             <div class="section-header">
                 <h2>Ramos de Maquillaje</h2>
                 <p>La combinación perfecta de flores eternas y belleza.</p>
@@ -249,59 +376,6 @@
                             <li>• Rubor & Rizador pestañas</li>
                             <li>• Labiales vino (mate & barra)</li>
                             <li>• Esponjas motera & Ponds</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Category: Cuidado de la Piel -->
-        <section id="skincare" class="collection-section container">
-            <div class="section-header">
-                <h2>Cuidado de la Piel</h2>
-                <p>Rituales de belleza para consentir tu rostro.</p>
-            </div>
-            <div class="product-grid">
-                <!-- Product 10: Ramo Skincare -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-image-slider">
-                            <img src="assets/ramo-skincare-1.png" alt="Ramo Skincare - Vista 1">
-                            <img src="assets/ramo-skincare-2.png" alt="Ramo Skincare - Vista 2">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ramo Skincare Relax</h3>
-                        <div class="product-meta">
-                            <span class="price">S/40.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• Mascarilla facial & Ojeras</li>
-                            <li>• Mascarilla labios & Negra</li>
-                            <li>• Labial líquido mate</li>
-                            <li>• Incluye dulces surtidos</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Product 11: Pack Rutina completa Skincare -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-image-slider">
-                            <img src="assets/pack-skincare-1.png" alt="Pack Rutina completa Skincare - Vista 1">
-                            <img src="assets/pack-skincare-2.png" alt="Pack Rutina completa Skincare - Vista 2">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pack Rutina Completa</h3>
-                        <div class="product-meta">
-                            <span class="price">S/50.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• 4 Mascarillas especializadas</li>
-                            <li>• Exfoliantes de Arroz & Silicona</li>
-                            <li>• Crema de manos nutritiva</li>
-                            <li>• Vincha skincare profesional</li>
                         </ul>
                     </div>
                 </div>
@@ -395,24 +469,6 @@
                     </div>
                 </div>
 
-                <!-- Product 12: Box Personalizado -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/box-personalizado.png" alt="Box personalizado con dulces y fotos">
-                    </div>
-                    <div class="product-info">
-                        <h3>Box Fotos & Dulces</h3>
-                        <div class="product-meta">
-                            <span class="price">S/55.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• 2 Fotos personalizadas</li>
-                            <li>• Snacks: Piqueos & Chifles</li>
-                            <li>• Corazón de chocolate & Jugos</li>
-                            <li>• Bandeja decorativa premium</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
 
