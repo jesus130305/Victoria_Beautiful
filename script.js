@@ -511,6 +511,48 @@ function initCatalog() {
         }
     };
 
+    // Global function to return to home from catalog breadcrumbs
+    window.showHome = function () {
+        console.log("Returning Home...");
+
+        // Show home sections
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) heroSection.classList.remove('vb-hidden');
+
+        const boxesSection = document.getElementById('boxes');
+        if (boxesSection) boxesSection.classList.remove('vb-hidden');
+
+        const whyChooseSection = document.querySelector('.why-choose');
+        if (whyChooseSection) whyChooseSection.classList.remove('vb-hidden');
+
+        // Hide all catalogs
+        const catalogSections = [
+            'product-catalog', 'ramos-catalog', 'accesorios-catalog',
+            'skincare-catalog', 'perfumes-catalog', 'maquillaje-catalog'
+        ];
+        catalogSections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.add('vb-hidden');
+        });
+
+        // Hide details and contact
+        const detailsScreen = document.getElementById('product-details');
+        if (detailsScreen) detailsScreen.classList.add('vb-hidden');
+
+        const contactScreen = document.getElementById('contact-screen');
+        if (contactScreen) contactScreen.classList.add('vb-hidden');
+
+        // Remove state from localStorage
+        localStorage.removeItem('selectedCatalog');
+
+        // Scroll to top
+        if (typeof forceScrollToTop === 'function') {
+            forceScrollToTop();
+        } else {
+            window.scrollTo(0, 0);
+        }
+    };
+
     // --- INTEGRACIÓN CON MENU SUPERIOR ---
     const megaMenuLinks = document.querySelectorAll('.mega-menu a');
     megaMenuLinks.forEach(link => {
