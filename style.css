@@ -521,10 +521,10 @@ a {
 /* Sections Header */
 .section-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     margin: 30px 0 30px;
-    /* Reduced top margin from 60px to 30px */
 }
 
 .section-header h2 {
@@ -1660,6 +1660,31 @@ a {
 }
 
 .vd-separator {
+    color: #ddd;
+}
+
+/* Catalog Breadcrumbs */
+.catalog-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.catalog-breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.catalog-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.catalog-breadcrumb .separator {
     color: #ddd;
 }
 
