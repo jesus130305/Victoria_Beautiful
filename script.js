@@ -339,6 +339,12 @@ const catalogProducts = {
     ],
     'personajes': [
         {
+            name: "Box Harry Potter Magic",
+            price: "S/125.00",
+            img: "assets/box-harry-potter.png",
+            category: "Box Personajes"
+        },
+        {
             name: "Box Disney Magic",
             price: "S/110.00",
             img: "assets/ramo-maquillaje-minnie-1.png",
