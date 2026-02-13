@@ -14,7 +14,9 @@
     <!-- Ionicons for icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style-responsive.css?v=2.0">
+
 </head>
 
 <body>
@@ -58,7 +60,7 @@
                 <nav class="nav">
                     <ul>
                         <li class="dropdown-item">
-                            <a href="#boxes">Box Personalizados</a>
+                            <a href="javascript:void(0)" data-target="product-catalog">Box Personalizados</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Box Desayunos</a></li>
@@ -72,7 +74,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#">Ramos Personalizados</a>
+                            <a href="javascript:void(0)" data-target="ramos-catalog">Ramos Personalizados</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Ramos de Maquillaje</a></li>
@@ -85,7 +87,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#">Accesorios de Belleza</a>
+                            <a href="javascript:void(0)" data-target="accesorios-catalog">Accesorios de Belleza</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Espejos para cartera</a></li>
@@ -94,7 +96,8 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#skincare">Skincare y Tratamientos Faciales</a>
+                            <a href="javascript:void(0)" data-target="skincare-catalog">Skincare y Tratamientos
+                                Faciales</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Crema de manos</a></li>
@@ -112,7 +115,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#">Perfumes y Fragancias</a>
+                            <a href="javascript:void(0)" data-target="perfumes-catalog">Perfumes y Fragancias</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Mini perfumes</a></li>
@@ -123,7 +126,7 @@
                             </div>
                         </li>
                         <li class="dropdown-item">
-                            <a href="#maquillaje">Maquillaje</a>
+                            <a href="javascript:void(0)" data-target="maquillaje-catalog">Maquillaje</a>
                             <div class="mega-menu">
                                 <ul>
                                     <li><a href="#">Labiales líquidos</a></li>
@@ -158,151 +161,302 @@
                     <h1>Sencillamente Hermosa, Naturalmente Tú</h1>
                     <p>Encuentra el detalle perfecto que resalta tu belleza. Ramos premium, skincare de lujo
                         y boxes personalizados diseñados para emocionar.</p>
-                    <a href="#maquillaje" class="btn btn-primary">Ver Colección</a>
+                    <a href="#" class="btn btn-primary"
+                        onclick="event.preventDefault(); switchCatalog('product-catalog');">Ver Catálogo</a>
                 </div>
             </div>
         </section>
 
-        <!-- Category: Ramos de Maquillaje -->
-        <section id="maquillaje" class="collection-section container">
+
+        <!-- Catalog Section (Boxes) -->
+        <section id="product-catalog" class="collection-section container vb-hidden">
             <div class="section-header">
-                <h2>Ramos de Maquillaje</h2>
-                <p>La combinación perfecta de flores eternas y belleza.</p>
+                <h2>Box Personalizados</h2>
+                <p>Encuentra el detalle perfecto dividido por categorías.</p>
             </div>
-            <div class="product-grid">
-                <!-- Product 6: Ramo de Maquillaje Minnie & Mickey -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-image-slider">
-                            <img src="assets/ramo-maquillaje-minnie-1.png"
-                                alt="Ramo de Maquillaje Minnie & Mickey - Vista 1">
-                            <img src="assets/ramo-maquillaje-minnie-2.png"
-                                alt="Ramo de Maquillaje Minnie & Mickey - Vista 2">
-                            <img src="assets/ramo-maquillaje-minnie-3.png"
-                                alt="Ramo de Maquillaje Minnie & Mickey - Vista 3">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Ramo Minnie & Mickey</h3>
-                        <div class="product-meta">
-                            <span class="price">S/70.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• Sombras: Tonos rosados y cálidos</li>
-                            <li>• Labiales: 4 tonos variados</li>
-                            <li>• Delineador: Negro con brillo</li>
-                            <li>• Esmalte: Púrpura</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Product 7: Ramo de Maquillaje Opción 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/ramo-maquillaje-2.png" alt="Ramo de Maquillaje Opción 2">
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn active" data-categoria="desayunos">
+                            Box Desayunos
+                        </button>
+                        <button class="cat-btn" data-categoria="antojitos">
+                            Box Antojitos al Paso
+                        </button>
+                        <button class="cat-btn" data-categoria="dulces">
+                            Box Dulces
+                        </button>
+                        <button class="cat-btn" data-categoria="dulces-fotos">
+                            Box Dulces con Fotos
+                        </button>
+                        <button class="cat-btn" data-categoria="personajes">
+                            Box Personalizados con Personajes
+                        </button>
+                        <button class="cat-btn" data-categoria="donas">
+                            Box Mini Donas Personalizadas
+                        </button>
+                        <button class="cat-btn" data-categoria="fresas">
+                            Box Fresas Personalizadas
+                        </button>
                     </div>
-                    <div class="product-info">
-                        <h3>Ramo Maquillaje Glamour</h3>
-                        <div class="product-meta">
-                            <span class="price">S/80.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• Brochas sirenita & Polvo hadas</li>
-                            <li>• Labial gloss & Mate líquido</li>
-                            <li>• Paleta de rubores & sombras</li>
-                            <li>• Corrector & Iluminador duo</li>
-                        </ul>
-                    </div>
-                </div>
+                </aside>
 
-                <!-- Product 8: Ramo de Maquillaje para Niña -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/ramo-maquillaje-nina.png" alt="Ramo de Maquillaje para Niña">
+                <div class="catalog-content">
+                    <div id="catalog-grid" class="product-grid">
+                        <!-- Dynamic products will be loaded here -->
                     </div>
-                    <div class="product-info">
-                        <h3>Ramo Maquillaje Niña</h3>
-                        <div class="product-meta">
-                            <span class="price">S/55.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• 3 Brillos labiales & Vincha Minnie</li>
-                            <li>• Espejo con peine & Polvo hadas</li>
-                            <li>• Mascarilla facial & Skincare</li>
-                            <li>• Incluye dulces surtidos</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Product 9: Ramo Maquillaje Opción 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/ramo-maquillaje-3.png" alt="Ramo Maquillaje Opción 3">
-                    </div>
-                    <div class="product-info">
-                        <h3>Ramo Maquillaje Elegante</h3>
-                        <div class="product-meta">
-                            <span class="price">S/60.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• Sombras con iluminador</li>
-                            <li>• Rubor & Rizador pestañas</li>
-                            <li>• Labiales vino (mate & barra)</li>
-                            <li>• Esponjas motera & Ponds</li>
-                        </ul>
+                    <div id="no-products-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Category: Cuidado de la Piel -->
-        <section id="skincare" class="collection-section container">
+        <!-- Ramos Catalog Section -->
+        <section id="ramos-catalog" class="collection-section container vb-hidden">
             <div class="section-header">
-                <h2>Cuidado de la Piel</h2>
-                <p>Rituales de belleza para consentir tu rostro.</p>
+                <h2>Ramos Personalizados</h2>
+                <p>Elige el estilo que más te guste y personalízalo a tu manera.</p>
             </div>
-            <div class="product-grid">
-                <!-- Product 10: Ramo Skincare -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-image-slider">
-                            <img src="assets/ramo-skincare-1.png" alt="Ramo Skincare - Vista 1">
-                            <img src="assets/ramo-skincare-2.png" alt="Ramo Skincare - Vista 2">
-                        </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Estilos de Ramos</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-ramos active" data-categoria="ramos-maquillaje">
+                            Ramos de Maquillaje
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-skincare">
+                            Ramos de Skincare
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-dulces">
+                            Ramos de Fotos y Dulces
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-eternos">
+                            Ramos Rosas Eternas y Dulces
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-hotwheels">
+                            Ramos Hot Wheels
+                        </button>
+                        <button class="cat-btn-ramos" data-categoria="ramos-peluches">
+                            Ramos con Peluches y Dulces
+                        </button>
                     </div>
-                    <div class="product-info">
-                        <h3>Ramo Skincare Relax</h3>
-                        <div class="product-meta">
-                            <span class="price">S/40.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• Mascarilla facial & Ojeras</li>
-                            <li>• Mascarilla labios & Negra</li>
-                            <li>• Labial líquido mate</li>
-                            <li>• Incluye dulces surtidos</li>
-                        </ul>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="ramos-grid" class="product-grid">
+                        <!-- Dynamic ramos will be loaded here -->
+                    </div>
+                    <div id="no-ramos-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay ramos disponibles en esta categoría por el momento.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Product 11: Pack Rutina completa Skincare -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="product-image-slider">
-                            <img src="assets/pack-skincare-1.png" alt="Pack Rutina completa Skincare - Vista 1">
-                            <img src="assets/pack-skincare-2.png" alt="Pack Rutina completa Skincare - Vista 2">
-                        </div>
+        <!-- Accesorios Catalog Section -->
+        <section id="accesorios-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Accesorios de Belleza</h2>
+                <p>Complementos esenciales para resaltar tu estilo diario.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-accesorios active" data-categoria="espejos-cartera">
+                            Espejos para Cartera
+                        </button>
+                        <button class="cat-btn-accesorios" data-categoria="espejos-led">
+                            Espejos LED para Tocador
+                        </button>
                     </div>
-                    <div class="product-info">
-                        <h3>Pack Rutina Completa</h3>
-                        <div class="product-meta">
-                            <span class="price">S/50.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• 4 Mascarillas especializadas</li>
-                            <li>• Exfoliantes de Arroz & Silicona</li>
-                            <li>• Crema de manos nutritiva</li>
-                            <li>• Vincha skincare profesional</li>
-                        </ul>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="accesorios-grid" class="product-grid">
+                        <!-- Dynamic accesorios will be loaded here -->
+                    </div>
+                    <div id="no-accesorios-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skincare Catalog Section -->
+        <section id="skincare-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Skincare y Tratamientos Faciales</h2>
+                <p>Cuida tu piel con los mejores productos y tratamientos.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-skincare active" data-categoria="crema-manos">
+                            Crema de Manos
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="exfoliantes">
+                            Exfoliantes
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="limpiador-facial">
+                            Limpiador Facial
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="jabon-facial">
+                            Jabón Facial
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="vincha-skincare">
+                            Vincha Skincare
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="puntos-negros">
+                            Mascarilla Puntos Negros
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="mascarilla-ojeras">
+                            Mascarilla para Ojeras
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="mascarilla-labios">
+                            Mascarilla para Labios
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="mascarilla-facial">
+                            Mascarilla Facial
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="exfoliador-silicona">
+                            Exfoliador de Silicona
+                        </button>
+                        <button class="cat-btn-skincare" data-categoria="masajeadores">
+                            Pack Masajeadores
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="skincare-grid" class="product-grid">
+                        <!-- Dynamic skincare will be loaded here -->
+                    </div>
+                    <div id="no-skincare-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfumes Catalog Section -->
+        <section id="perfumes-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Perfumes y Fragancias</h2>
+                <p>Fragancias exquisitas para cada momento y personalidad.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-perfumes active" data-categoria="mini-perfumes">
+                            Mini Perfumes
+                        </button>
+                        <button class="cat-btn-perfumes" data-categoria="colonias-refrescantes">
+                            Colonias Refrescantes
+                        </button>
+                        <button class="cat-btn-perfumes" data-categoria="colonias-shimmer">
+                            Colonias Shimmer
+                        </button>
+                        <button class="cat-btn-perfumes" data-categoria="pack-colonias">
+                            Pack Colonias con Crema
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="perfumes-grid" class="product-grid">
+                        <!-- Dynamic perfumes will be loaded here -->
+                    </div>
+                    <div id="no-perfumes-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay fragancias disponibles en esta categoría por el momento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maquillaje Catalog Section -->
+        <section id="maquillaje-catalog" class="collection-section container vb-hidden">
+            <div class="section-header">
+                <h2>Maquillaje</h2>
+                <p>Resalta tu belleza natural con nuestra selección de maquillaje premium.</p>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="catalog-sidebar">
+                    <h3 class="sidebar-title">Categorías</h3>
+                    <div class="category-menu">
+                        <button class="cat-btn-maquillaje active" data-categoria="labiales-liquidos">
+                            Labiales Líquidos
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="labiales-barra">
+                            Labiales en Barra
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="lip-gloss">
+                            Lip Gloss / Brillo Gloss
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="balsamo-labial">
+                            Bálsamo Labial
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="labiales-tinta">
+                            Labiales Tinta
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="rubores">
+                            Rubores
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="sombras-ojos">
+                            Sombras Para Ojos
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="sombras-cejas">
+                            Sombras Para Cejas
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="delineador-ojos">
+                            Delineador De Ojos
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="iluminadores">
+                            Iluminadores
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="polvo-hadas">
+                            Polvo De Hadas
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="polvo-compacto">
+                            Polvo Compacto
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="correctores">
+                            Correctores
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="esmaltes">
+                            Esmaltes
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="rizadores">
+                            Rizadores De Pestañas
+                        </button>
+                        <button class="cat-btn-maquillaje" data-categoria="brochas">
+                            Brochas
+                        </button>
+                    </div>
+                </aside>
+
+                <div class="catalog-content">
+                    <div id="maquillaje-grid" class="product-grid">
+                        <!-- Dynamic maquillaje will be loaded here -->
+                    </div>
+                    <div id="no-maquillaje-msg" class="no-products-msg vb-hidden">
+                        <ion-icon name="alert-circle-outline"></ion-icon>
+                        <p>No hay productos disponibles en esta categoría por el momento.</p>
                     </div>
                 </div>
             </div>
@@ -395,24 +549,6 @@
                     </div>
                 </div>
 
-                <!-- Product 12: Box Personalizado -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="assets/box-personalizado.png" alt="Box personalizado con dulces y fotos">
-                    </div>
-                    <div class="product-info">
-                        <h3>Box Fotos & Dulces</h3>
-                        <div class="product-meta">
-                            <span class="price">S/55.00</span>
-                        </div>
-                        <ul class="product-details">
-                            <li>• 2 Fotos personalizadas</li>
-                            <li>• Snacks: Piqueos & Chifles</li>
-                            <li>• Corazón de chocolate & Jugos</li>
-                            <li>• Bandeja decorativa premium</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
 
